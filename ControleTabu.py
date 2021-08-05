@@ -4,24 +4,26 @@ import time
 print("\n -=- -=- -=- -=- -=- -=- -=- TABULAÇÂO ENCAMINHAMENTO-=- -=- -=- -=- -=- -=- -=- \n")
 
 while True:
+    arquivo = open("Tabulacao.txt", "a")
+    problema = 12
+    operacao = 20
+    while problema >= 12:
+        problema = int(input(''' Escolha o problema:  
+        [1] SD - Aplicativo com Problema
+        [2] SD - Bitlocker
+        [3] SD - CPU Problema
+        [4] SD - Headset Problema
+        [5] SD - Monitor Problema
+        [6] SD - Mouse Problema
+        [7] SD - Teclado Problema
+        [8] SD - Windows - Falha de logon
+        [9] SD - Windows - Sistema Operacional
+        [10] TS - VDI problema
+        [11] TSWVD - VDI problema
+        informe aqui:  '''))
 
-    arquivo = open("Tabulação.txt", "a")
-    problema = int(input(''' Escolha o problema:  
-    [1] SD - Aplicativo com Problema
-    [2] SD - Bitlocker
-    [3] SD - CPU Problema
-    [4] SD - Headset Problema
-    [5] SD - Monitor Problema
-    [6] SD - Mouse Problema
-    [7] SD - Teclado Problema
-    [8] SD - Windows - Falha de logon
-    [9] SD - Windows - Sistema Operacional
-    [10] TS - VDI problema
-    [11] TSWVD - VDI problema
-    informe aqui:  '''))
-
-    operacao = int(input(''' Escolha a operação:  
-
+    while operacao >= 20:
+        operacao = int(input(''' Escolha a operação:  
         [1] Aliança
         [2] Banco Pan
         [3] Bradesco Affinity
@@ -41,7 +43,7 @@ while True:
         [17] Via Varejo
         [18] VIVO
         [19] White Martins 
-
+        
         informe aqui:  '''))
 
     if operacao == 1:
@@ -101,8 +103,6 @@ while True:
     elif operacao == 19:
         print("Operação :White Martins")
         arquivo.write("\nOperação :White Martins")
-    else:
-        print("Nenhuma operação encontrada :(")
 
     if problema == 1:
         print("Problema: SD - Aplicativo com Problema")
@@ -213,8 +213,6 @@ while True:
         arquivo.write("Link: {}\n".format(link))
         pool = str(input('\nInforme o pool da área remota: '))
         arquivo.write("Link: {}\n".format(pool))
-    else:
-        print("Opção invalida :( ")
 
     colaborador = str(input('\nInforme o nome do colaborador: '))
     arquivo.write("Colaborador: {}\n".format(colaborador))
@@ -241,4 +239,4 @@ while True:
 
     arquivo.write('-=-'*24)
     arquivo.close()
-    os.system("notepad.exe Tabulação.txt")
+    os.system("notepad.exe Tabulacao.txt")
